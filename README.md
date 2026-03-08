@@ -91,4 +91,10 @@ The data provided in `data/covid_dataset.csv` is a simplified subset inspired by
 
 ---
 
+## 📜 Author
+
+Design and Implementation by VIJAYAPANDIAN.T.
+
+---
+
 **Developed for Data Analytics Portfolio Building.**
