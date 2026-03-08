@@ -1,0 +1,237 @@
+:root {
+  --bg-color: #0d1117;
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
+  --accent: #58a6ff;
+  --glass-bg: rgba(22, 27, 34, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --positive: #3fb950;
+  --negative: #f85149;
+  --chart-gradient-1: rgba(88, 166, 255, 0.4);
+  --chart-gradient-2: rgba(88, 166, 255, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(88, 166, 255, 0.15),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(137, 87, 229, 0.15),
+      transparent 25%
+    );
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #ffffff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #3b8ced;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 166, 255, 0.4);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* KPI Section */
+.kpi-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.kpi-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.kpi-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.kpi-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.kpi-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.kpi-card h3 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-trend {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.positive {
+  color: var(--positive);
+}
+.negative {
+  color: var(--negative);
+}
+.neutral {
+  color: var(--text-secondary);
+}
+
+/* Charts Section */
+.charts-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.chart-wrapper {
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+}
+
+.side-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.side-charts .chart-container {
+  height: 100%;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .kpi-value {
+    font-size: 2rem;
+  }
+}

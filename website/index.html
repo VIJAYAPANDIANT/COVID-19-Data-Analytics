@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header>
+        <div class="header-content">
+          <h1>COVID-19 Global Monitor</h1>
+          <p>Real-time analytics & insights</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary">Refresh Data</button>
+        </div>
+      </header>
+
+      <section class="kpi-section">
+        <div class="kpi-card glass">
+          <h3>Total Cases</h3>
+          <div class="kpi-value" id="kpi-cases">684,231,102</div>
+          <div class="kpi-trend positive">↑ 1.2% this week</div>
+        </div>
+        <div class="kpi-card glass">
+          <h3>Total Deaths</h3>
+          <div class="kpi-value" id="kpi-deaths">6,842,019</div>
+          <div class="kpi-trend negative">↓ 0.5% this week</div>
+        </div>
+        <div class="kpi-card glass">
+          <h3>Total Vaccinated</h3>
+          <div class="kpi-value" id="kpi-vax">5,102,948,011</div>
+          <div class="kpi-trend positive">↑ 2.1% this week</div>
+        </div>
+        <div class="kpi-card glass">
+          <h3>Global Death Rate</h3>
+          <div class="kpi-value" id="kpi-rate">1.0%</div>
+          <div class="kpi-trend neutral">- Stable</div>
+        </div>
+      </section>
+
+      <section class="charts-section">
+        <div class="chart-container glass main-chart">
+          <h2>Daily Global Trends</h2>
+          <div class="chart-wrapper">
+            <canvas id="trendChart"></canvas>
+          </div>
+        </div>
+        <div class="side-charts">
+          <div class="chart-container glass">
+            <h2>Top Affected (Millions)</h2>
+            <div class="chart-wrapper">
+              <canvas id="countryChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-container glass">
+            <h2>Vaccination Progress</h2>
+            <div class="chart-wrapper">
+              <canvas id="vaxChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
