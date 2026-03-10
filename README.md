@@ -1,4 +1,4 @@
-# 🦠 COVID-19 Data Analytics Project (SQL)
+<img width="593" height="438" alt="image" src="https://github.com/user-attachments/assets/7a51a0c5-f811-454e-a111-1749a5029509" /># 🦠 COVID-19 Data Analytics Project (SQL)
 
 Welcome to the COVID-19 Data Analytics Project! This repository serves as a comprehensive demonstration of real-world data analytics using SQL. The project focuses on processing, querying, and understanding global COVID-19 statistics through advanced database operations. Additionally, it features a frontend web dashboard to visualize the insights generated from the data.
 
@@ -82,6 +82,10 @@ Here is how the project files are organized:
 2. Navigate to the `website/` folder.
 3. Open `index.html` directly in any modern web browser.
 4. You will see a professionally styled, dark-themed dashboard with interactive Chart.js visualizations (Line charts for trends, Bar charts for top countries, and Doughnut charts for vaccination progress).
+
+### Website
+
+<img width="593" height="438" alt="image" src="https://github.com/user-attachments/assets/569cddd6-3844-4b9e-af53-5b3ea379e041" />
 
 ---
 
