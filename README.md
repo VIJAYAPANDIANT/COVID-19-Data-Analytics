@@ -1,5 +1,5 @@
-<img width="593" height="438" alt="image" src="https://github.com/user-attachments/assets/7a51a0c5-f811-454e-a111-1749a5029509" /># 🦠 COVID-19 Data Analytics Project (SQL)
-
+# 🦠 COVID-19 Data Analytics Project (SQL)
+z
 Welcome to the COVID-19 Data Analytics Project! This repository serves as a comprehensive demonstration of real-world data analytics using SQL. The project focuses on processing, querying, and understanding global COVID-19 statistics through advanced database operations. Additionally, it features a frontend web dashboard to visualize the insights generated from the data.
 
 ---
