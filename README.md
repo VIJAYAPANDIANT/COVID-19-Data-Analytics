@@ -1,5 +1,5 @@
 # 🦠 COVID-19 Data Analytics Project (SQL)
-z
+
 Welcome to the COVID-19 Data Analytics Project! This repository serves as a comprehensive demonstration of real-world data analytics using SQL. The project focuses on processing, querying, and understanding global COVID-19 statistics through advanced database operations. Additionally, it features a frontend web dashboard to visualize the insights generated from the data.
 
 ---
