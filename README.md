@@ -16,6 +16,12 @@ The primary goal of this project is to analyze global COVID-19 data to extract m
 
 ---
 
+## Document
+
+### https://drive.google.com/file/d/1WnLNYoLySju8G9t6Q9q1rP5FWfFITFR3/view?usp=sharing
+
+---
+
 ## 🚀 Key SQL Concepts Demonstrated
 
 This project is built to showcase a wide array of essential SQL skills used by data analysts and data engineers in the industry:
