@@ -83,7 +83,9 @@ Here is how the project files are organized:
 3. Open `index.html` directly in any modern web browser.
 4. You will see a professionally styled, dark-themed dashboard with interactive Chart.js visualizations (Line charts for trends, Bar charts for top countries, and Doughnut charts for vaccination progress).
 
-### Website
+---
+
+## Website
 
 <img width="593" height="438" alt="image" src="https://github.com/user-attachments/assets/569cddd6-3844-4b9e-af53-5b3ea379e041" />
 
