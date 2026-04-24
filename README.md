@@ -1,94 +1,121 @@
-# 🦠 COVID-19 Data Analytics Project (SQL)
+<div align="center">
+  <h1>🦠 COVID-19 Data Analytics Project</h1>
+  <p><strong>A Comprehensive SQL & Web Analytics Portfolio</strong></p>
 
-Welcome to the COVID-19 Data Analytics Project! This repository serves as a comprehensive demonstration of real-world data analytics using SQL. The project focuses on processing, querying, and understanding global COVID-19 statistics through advanced database operations. Additionally, it features a frontend web dashboard to visualize the insights generated from the data.
-
----
-
-## 🎯 Project Objective
-
-The primary goal of this project is to analyze global COVID-19 data to extract meaningful public health insights. Through rigorous SQL querying, this project answers key questions about the pandemic's impact:
-
-- **Top Affected Countries:** Which nations have recorded the highest number of total cases?
-- **Daily Case Trends:** How are new cases and deaths trending globally on a day-to-day basis?
-- **Mortality Rates:** What is the ratio of deaths to total cases across different countries?
-- **Vaccination Progress:** How successfully are countries rolling out their vaccination programs, and what percentage of their populations are fully vaccinated?
-- **Rolling Averages:** What is the 7-day rolling average of new cases for specific regions to identify active surges while smoothing out daily reporting anomalies?
+  [![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+  [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+  [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  [![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](https://www.chartjs.org/)
+</div>
 
 ---
 
-## 🚀 Key SQL Concepts Demonstrated
+## 📖 Project Overview
 
-This project is built to showcase a wide array of essential SQL skills used by data analysts and data engineers in the industry:
+Welcome to the **COVID-19 Data Analytics Project**! This repository is a full-stack demonstration of real-world data analytics. It bridges the gap between raw database operations and interactive data visualization.
 
-1. **Database Schema Design:** Creating structured tables with appropriate data types (`VARCHAR`, `DATE`, `INT`, `BIGINT`) and performance indexes.
-2. **Data Cleaning & Handling:** Using functions like `NULLIF` to handle missing or empty values gracefully during data import.
-3. **Data Aggregation:** Extensive use of `SUM()`, `AVG()`, and `MAX()` to summarize large datasets.
-4. **Grouping & Filtering:** Utilizing `GROUP BY` and `HAVING` (or `WHERE`) to categorize data by country or date and filter out statistically insignificant records (e.g., countries with too few cases).
-5. **Table Joins:** Executing inner joins (and Common Table Expressions, or CTEs) to combine the latest date records with the main dataset to find current aggregate totals.
-6. **Window Functions:** Leveraging `OVER (PARTITION BY ... ORDER BY ... ROWS BETWEEN ...)` to calculate complex metrics like the 7-day rolling average.
-7. **Type Casting:** Using `CAST()` or implicit conversions to accurately calculate percentage metrics (like death rates and vaccination rates) without integer division truncation.
+The project focuses on processing global COVID-19 statistics using advanced **SQL** techniques and presenting those insights through a modern, responsive **Frontend Dashboard**.
+
+> [!NOTE]
+> **Detailed Documentation:** [View Project Document](https://drive.google.com/file/d/1WnLNYoLySju8G9t6Q9q1rP5FWfFITFR3/view?usp=sharing)
+
+---
+
+## 🎯 Key Features & Analysis
+
+This project answers critical public health questions through data:
+
+*   **Global Trends:** Tracking daily new cases and deaths to identify pandemic waves.
+*   **Impact Assessment:** Ranking the top 10 most affected countries by total case volume.
+*   **Mortality Analytics:** Calculating precise death rates per country.
+*   **Vaccination Progress:** Monitoring the percentage of populations fully vaccinated.
+*   **Advanced Metrics:** Implementing **7-day rolling averages** to smooth out daily reporting anomalies.
+
+---
+
+## 🛠️ Tech Stack
+
+*   **Database:** SQL (MySQL/PostgreSQL compatible) for core data processing.
+*   **Frontend:** HTML5 & CSS3 with Glassmorphism design principles.
+*   **Visualization:** Chart.js for dynamic, interactive data plotting.
+*   **Data Cleaning:** SQL functions (`NULLIF`, `CAST`, `COALESCE`) for robust data handling.
+
+---
+
+## 📊 Database Architecture
+
+The project utilizes a structured schema designed for high-performance analytical queries.
+
+### Schema: `covid_data`
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `INT` | Primary Key (Auto-increment) |
+| `country` | `VARCHAR(100)` | Name of the nation |
+| `record_date` | `DATE` | Date of the record |
+| `total_cases` | `INT` | Cumulative infection count |
+| `new_cases` | `INT` | Daily new infections |
+| `total_deaths` | `INT` | Cumulative death toll |
+| `total_vaccinations`| `BIGINT` | Total doses administered |
+| `population` | `BIGINT` | National population count |
+
+---
+
+## 💻 Dashboard Preview
+
+The dashboard features a stunning **Dark Mode Glassmorphism** UI, providing a premium user experience for data exploration.
+
+<div align="center">
+  <img width="800" alt="Dashboard Screenshot" src="https://github.com/user-attachments/assets/569cddd6-3844-4b9e-af53-5b3ea379e041" />
+</div>
 
 ---
 
 ## 📁 Project Structure
 
-Here is how the project files are organized:
-
-```
+```text
 /
 ├── data/
-│   └── covid_dataset.csv          # Sample dataset used for the analysis.
-│
+│   └── covid_dataset.csv          # Source dataset
 ├── database/
-│   ├── create_database.sql        # Script to initialize the target database.
-│   ├── create_tables.sql          # Script defining the schema for the covid_data table.
-│   └── import_data.sql            # Script to bulk load the CSV data into the database.
-│
+│   ├── create_database.sql        # Database initialization
+│   ├── create_tables.sql          # Schema definition
+│   └── import_data.sql            # Bulk data loader
 ├── queries/
-│   ├── top_countries.sql          # Query: Retrieves the top 10 most affected countries.
-│   ├── daily_trends.sql           # Query: Summarizes global new cases/deaths per day.
-│   ├── death_rate.sql             # Query: Calculates the mortality percentage per country.
-│   ├── vaccination_progress.sql   # Query: Returns the percentage of the population fully vaccinated.
-│   └── rolling_cases.sql          # Query: Computes the 7-day moving average of cases.
-│
-├── docs/
-│   ├── analysis_report.md         # A detailed written report summarizing the SQL findings.
-│   └── dataset_description.md     # Documentation regarding the data schema and sources.
-│
+│   ├── top_countries.sql          # Analysis: Top 10 countries
+│   ├── daily_trends.sql           # Analysis: Global trends
+│   ├── death_rate.sql             # Analysis: Mortality rates
+│   └── rolling_cases.sql          # Analysis: 7-day averages
 ├── website/
-│   ├── index.html                 # The main structure of the Dashboard.
-│   ├── style.css                  # Beautiful, modern Glassmorphism styling.
-│   └── script.js                  # Logic for rendering Chart.js graphs and dynamic UI.
-│
-└── README.md                      # This documentation file.
+│   ├── index.html                 # Dashboard Structure
+│   ├── style.css                  # Glassmorphism Styling
+│   └── script.js                  # Visualization Logic
+└── README.md                      # Documentation
 ```
 
 ---
 
-## 💻 How to Run the Project
+## 🚀 Getting Started
 
-### Phase 1: Database Setup and Analysis
+### Phase 1: Database Setup
+1. Execute `database/create_database.sql` to initialize your environment.
+2. Run `database/create_tables.sql` to build the core schema.
+3. Use `database/import_data.sql` to load the dataset from the `data/` folder.
+4. Explore any script in the `queries/` directory for immediate insights.
 
-1. Ensure you have an SQL relational database management system installed (e.g., MySQL, PostgreSQL, SQL Server).
-2. Open your preferred SQL client tool (like DBeaver, MySQL Workbench, or VS Code SQL tools).
-3. Execute the script `database/create_database.sql` to instantiate the database environment.
-4. Execute `database/create_tables.sql` to build the required table structure.
-5. (Optional/Depending on RDBMS) Use `database/import_data.sql` to load the mock data from `data/covid_dataset.csv`. Note: You may need to adjust the file path depending on your local machine setup.
-6. Open any script within the `queries/` folder and execute it to see the analytical results.
-
-### Phase 2: Viewing the "Real World Website" Dashboard
-
-1. The project includes a fully responsive frontend dashboard designed to visualize the metrics obtained from our database.
-2. Navigate to the `website/` folder.
-3. Open `index.html` directly in any modern web browser.
-4. You will see a professionally styled, dark-themed dashboard with interactive Chart.js visualizations (Line charts for trends, Bar charts for top countries, and Doughnut charts for vaccination progress).
+### Phase 2: Web Dashboard
+1. Navigate to the `website/` directory.
+2. Open `index.html` in any modern browser.
+3. Interact with the live charts powered by Chart.js.
 
 ---
 
-## 📊 About the Data
+## 📜 Author
 
-The data provided in `data/covid_dataset.csv` is a simplified subset inspired by prominent public health datasets (such as those from Our World in Data or the WHO). It is structured specifically to allow for practicing the SQL queries listed above and acts as a placeholder for full-scale analytical efforts.
+**VIJAYAPANDIAN.T**
+*Data Analytics Portfolio Project*
 
 ---
-
-**Developed for Data Analytics Portfolio Building.**
+<div align="center">
+  Developed with ❤️ for Data Science Excellence
+</div>
